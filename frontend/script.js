@@ -1,3 +1,5 @@
+const API = "https://vapourish-lauretta-retroactive.ngrok-free.dev";
+
 function showLogin() {
   document.getElementById("loginForm").classList.remove("hidden");
   document.getElementById("registerForm").classList.add("hidden");
@@ -104,4 +106,5 @@ async function register() {
     message.textContent = "Server offline 🚨";
   }
 }
+
 
