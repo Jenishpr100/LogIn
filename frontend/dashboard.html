@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #1d2671, #c33764);
+      color: white;
+      font-family: Arial, sans-serif;
+      flex-direction: column;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #c33764;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      color: white;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+<h1 id="welcome">Welcome!</h1>
+<button onclick="logout()">Logout</button>
+
+<script>
+  const username = sessionStorage.getItem("username");
+  if (!username) {
+    window.location.href = "index.html";
+  } else {
+    document.getElementById("welcome").textContent = `Welcome, ${username} 😎`;
+  }
+
+  function logout() {
+    sessionStorage.removeItem("username");
+    window.location.href = "index.html";
+  }
+</script>
+
+</body>
+</html>
